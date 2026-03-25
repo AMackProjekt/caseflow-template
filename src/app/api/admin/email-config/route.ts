@@ -1,0 +1,48 @@
+import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/auth";
+
+/**
+ * GET /api/admin/email-config
+ * Show email configuration status (admin only)
+ */
+export async function GET(req: NextRequest) {
+  try {
+    // Verify user is authenticated and admin
+    const session = await auth();
+    if (!session?.user || session.user.role !== "admin") {
+      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 403 });
+    }
+
+    const hasResendKey = !!process.env.RESEND_API_KEY;
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://caseflow-template.vercel.app";
+
+    return NextResponse.json({
+      success: true,
+      config: {
+        resendConfigured: hasResendKey,
+        resendApiKeyStatus: hasResendKey ? "✅ Configured" : "❌ Missing",
+        baseUrl,
+        environment: process.env.NODE_ENV ?? "development",
+        senderDomain: "yourorg.org (verified)",
+        fromEmail: "noreply@yourorg.org",
+        ccEmail: "donyale@yourorg.org",
+      },
+      endpoints: {
+        forgotPassword: "/api/auth/forgot-password",
+        resetPassword: "/api/auth/reset-password",
+        testEmail: "/api/admin/test-email",
+      },
+      notes: [
+        "If Resend is not configured: Set RESEND_API_KEY environment variable",
+        "Test email delivery using POST /api/admin/test-email with { email: 'your@email.com' }",
+        "Check server logs for detailed error messages when emails fail to send",
+      ],
+    });
+  } catch (err) {
+    console.error("[email-config]", err);
+    return NextResponse.json(
+      { success: false, error: "Unauthorized" },
+      { status: 403 }
+    );
+  }
+}

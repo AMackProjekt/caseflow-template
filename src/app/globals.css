@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Cyberpunk caseload theme */
+.cyber-grid-bg {
+  background-image:
+    linear-gradient(rgba(20,184,166,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,184,166,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyber-glow-teal {
+  text-shadow: 0 0 20px rgba(45,212,191,0.6);
+}
+
+.cyber-glow-white {
+  text-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.cyber-glow-number {
+  text-shadow: 0 0 20px rgba(45,212,191,0.4);
+}
+
+.cyber-card-shadow {
+  box-shadow: 0 0 30px rgba(20,184,166,0.05);
+}
+
+.cyber-card-shadow-teal {
+  box-shadow: 0 0 30px rgba(45,212,191,0.08);
+}
+
+.cyber-table-shadow {
+  box-shadow: 0 0 40px rgba(20,184,166,0.06);
+}
+
+.cyber-btn-add {
+  box-shadow: 0 0 20px rgba(20,184,166,0.15);
+}
+
+.cyber-btn-filter-active {
+  box-shadow: 0 0 12px rgba(20,184,166,0.2);
+}
+
+.cyber-avatar-glow {
+  box-shadow: 0 0 12px rgba(20,184,166,0.4);
+}
+
+.cyber-dot-glow {
+  box-shadow: 0 0 6px rgba(45,212,191,0.8);
+}
+
+.cyber-dot-glow-cyan {
+  box-shadow: 0 0 6px rgba(34,211,238,0.8);
+}
+
+.cyber-dot-glow-indigo {
+  box-shadow: 0 0 6px rgba(129,140,248,0.8);
+}
+
+.cyber-slot-glow {
+  text-shadow: 0 0 10px rgba(45,212,191,0.3);
+}
+
+/* ── Mobile safe-area utilities ─────────────────────────────────────────────── */
+.pb-safe-input {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* ── Scrollbar utilities ─────────────────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(100,116,139,0.3); border-radius: 2px; }

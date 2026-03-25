@@ -1,0 +1,48 @@
+{
+  "name": "Your Organization — Participant Portal",
+  "short_name": "DFC Portal",
+  "description": "Access your goals, messages, and case support resources — even offline.",
+  "start_url": "/portal/client",
+  "id": "/portal/client",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#14b8a6",
+  "categories": ["health", "productivity"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "My Goals",
+      "short_name": "Goals",
+      "description": "View and manage your goals",
+      "url": "/portal/client/goals"
+    },
+    {
+      "name": "Messages",
+      "short_name": "Messages",
+      "description": "Chat with your case manager",
+      "url": "/portal/client/messages"
+    },
+    {
+      "name": "My Profile",
+      "short_name": "Profile",
+      "description": "Update your contact information",
+      "url": "/portal/client/profile"
+    }
+  ]
+}
