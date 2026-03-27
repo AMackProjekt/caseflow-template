@@ -50,7 +50,7 @@ export default function WelcomeModal({ userName, portalType, onStartTour, onSkip
             }`}
           >
             {portalType === "staff"
-              ? "You're in CaseFlow Command — your full case management hub. Let us show you around."
+              ? "You're in CaseFlow Operations — your full case management hub. Let us show you around."
               : "You're in your CaseFlow Participant Portal. Here's what you can do here."}
           </p>
         </div>

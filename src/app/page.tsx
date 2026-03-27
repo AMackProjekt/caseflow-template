@@ -31,9 +31,9 @@ export default function Home() {
       <nav className="flex items-center justify-between px-6 md:px-12 h-16 border-b border-slate-800/60 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center shadow-lg shadow-teal-900/40">
-            <span className="text-teal-950 font-black text-[10px] tracking-tight">ORG</span>
+            <span className="text-teal-950 font-black text-[10px] tracking-tight">CF</span>
           </div>
-          <span className="font-bold text-white text-sm leading-none">CaseFlow Command</span>
+          <span className="font-bold text-white text-sm leading-none">CaseFlow Operations</span>
         </div>
         <div className="flex items-center gap-3">
           <Link href="/login/client" className="text-slate-400 hover:text-white text-sm font-medium transition-colors">
@@ -174,12 +174,12 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
-                  <span className="text-teal-950 font-black text-[10px]">ORG</span>
+                  <span className="text-teal-950 font-black text-[10px]">CF</span>
                 </div>
-                <span className="font-bold text-white text-sm">Your Organization</span>
+                <span className="font-bold text-white text-sm">T.O.O.LS INC</span>
               </div>
               <p className="text-slate-500 text-xs max-w-xs leading-relaxed">
-                A nonprofit organization dedicated to ending homelessness through housing-first case management and wraparound services.
+                T.O.O.LS INC builds intelligent tools for social services and case management organizations.
               </p>
             </div>
 
@@ -207,35 +207,32 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               {/* Copyright */}
               <div className="text-xs text-slate-600 text-center md:text-left leading-relaxed">
-                <p>© {new Date().getFullYear()} Your Organization. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} T.O.O.LS INC. All rights reserved.</p>
                 <p className="mt-1">
                   This platform is intended for authorized users only. Unauthorized access is prohibited and may be subject to legal action.
                   All user activity is logged and audited.
-                </p>
-                <p className="mt-2 text-amber-600/70 font-semibold uppercase tracking-widest text-[10px]">
-                  ⚠ Demo / Prototype — for evaluation purposes only
                 </p>
               </div>
 
               {/* AMP branding */}
               <div className="flex items-center gap-3 shrink-0">
-                <span className="text-slate-600 text-[10px] font-semibold uppercase tracking-widest">Powered by</span>
+                <span className="text-slate-600 text-[10px] font-semibold uppercase tracking-widest">Powered By</span>
                 <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl">
                   <Image
                     src="/amp-logo.jpeg"
-                    alt="[Your Studio]"
+                    alt="A MackProjekt"
                     width={24}
                     height={24}
                     className="rounded-md object-cover"
                   />
-                  <span className="text-slate-300 font-bold text-xs tracking-wide">[Your Studio]</span>
+                  <span className="text-slate-300 font-bold text-xs tracking-wide">A MackProjekt</span>
                 </div>
               </div>
             </div>
 
             {/* Legal notice */}
             <p className="mt-6 text-[10px] text-slate-700 text-center leading-relaxed max-w-4xl mx-auto">
-              CaseFlow Command is a proprietary platform developed by [Your Studio] for Your Organization. Use of this platform constitutes
+              CaseFlow Operations is a proprietary platform developed by A MackProjekt for T.O.O.LS INC. Use of this platform constitutes
               acceptance of the Terms of Use and Privacy Policy. This system processes Protected Health Information (PHI) in accordance with
               HIPAA (45 CFR Parts 160 and 164). Unauthorized disclosure of PHI may result in civil and criminal penalties. All data is
               encrypted in transit and at rest. This platform uses cookies essential to site security and session management. By continuing
@@ -243,9 +240,8 @@ export default function Home() {
             </p>
             <p className="mt-3 text-[10px] text-slate-800 text-center leading-relaxed max-w-3xl mx-auto border border-slate-800 rounded-xl px-4 py-2">
               This platform — including its design, architecture, source code, workflows, and all associated intellectual property — was
-              conceived, designed, and built solely by <span className="text-slate-500 font-bold">[Creator] / [Your Studio]</span>.
-              It is shared with Your Organization strictly for demonstration and evaluation purposes. No license, assignment, or transfer
-              of ownership is granted or implied. All rights reserved.
+              conceived, designed, and built solely by <span className="text-slate-500 font-bold">A MackProjekt</span>.
+              Deployed by T.O.O.LS INC. No license, assignment, or transfer of ownership is granted or implied. All rights reserved.
             </p>
           </div>
         </div>

@@ -113,7 +113,7 @@ export default function SettingsPage() {
                 type="email" 
                 title="Primary Email Forwarding Address"
                 disabled 
-                value="donyale@yourorg.org" 
+                value={process.env.NEXT_PUBLIC_NOTIFY_EMAIL ?? "notifications@sdtoolsinc.org"} 
                 className="bg-slate-200 border border-slate-300 text-slate-600 font-bold px-4 py-2 rounded-lg cursor-not-allowed w-full md:w-auto text-sm"
               />
             </div>
@@ -121,7 +121,7 @@ export default function SettingsPage() {
             <div className="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition cursor-pointer" onClick={() => setEmailForwarding(!emailForwarding)}>
               <div>
                 <label className="font-bold text-charcoal-900 block cursor-pointer">Activate Forwarding Bridge</label>
-                <p className="text-sm text-slate-500">Instantly push portal updates to your Your Organization inbox.</p>
+                <p className="text-sm text-slate-500">Instantly push portal updates to your T.O.O.LS INC inbox.</p>
               </div>
               <div className={`w-12 h-6 rounded-full transition-colors relative ${emailForwarding ? 'bg-teal-500' : 'bg-slate-300'}`}>
                 <div className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${emailForwarding ? 'translate-x-6' : 'translate-x-0'}`}></div>

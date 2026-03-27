@@ -1,8 +1,16 @@
-import { createCipheriv, createDecipheriv, createHash, randomBytes } from "crypto";
+import { createCipheriv, createDecipheriv, hkdfSync, randomBytes } from "crypto";
 
-function getKey() {
-  const raw = process.env.DATA_ENCRYPTION_KEY ?? process.env.AUTH_SECRET ?? "dev-only-change-me";
-  return createHash("sha256").update(raw).digest();
+// HKDF-SHA-256 produces a well-distributed 256-bit key from any length input.
+// Changing DATA_ENCRYPTION_KEY rotates to a new key (existing ciphertext
+// becomes unreadable, so rotate deliberately and re-encrypt stored records).
+function getKey(): Buffer {
+  const ikm = process.env.DATA_ENCRYPTION_KEY ?? process.env.AUTH_SECRET ?? "dev-only-UNSAFE-change-me";
+  if (process.env.NODE_ENV === "production" && ikm === "dev-only-UNSAFE-change-me") {
+    throw new Error("[crypto] DATA_ENCRYPTION_KEY or AUTH_SECRET must be set in production");
+  }
+  return Buffer.from(
+    hkdfSync("sha256", Buffer.from(ikm, "utf8"), "", "caseflow-phi-aes256gcm-v1", 32)
+  );
 }
 
 export function encryptJson(value: unknown) {

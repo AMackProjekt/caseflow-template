@@ -130,5 +130,6 @@
             "daurl": "#ffa704"
         }
     },
-    "json.schemas": []
+    "json.schemas": [],
+    "chat.agent.maxRequests": 100
 }

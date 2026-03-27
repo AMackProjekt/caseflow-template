@@ -4,14 +4,26 @@ import { Resend } from "resend";
 import { getClientCredential } from "@/auth";
 import { setEncryptedRecord } from "@/lib/server-data-store";
 import { encryptJson } from "@/lib/crypto";
+import { ORG } from "@/config/org";
+import { getBaseUrl } from "@/lib/runtime-config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://caseflow-template.vercel.app";
+const BASE_URL = getBaseUrl();
 
 export type PasswordResetToken = {
   email: string;
   expiresAt: string;
   usedAt?: string;
 };
+
+/** Escape characters that are significant in HTML attribute values and text nodes. */
+function escapeHtml(raw: string): string {
+  return raw
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,13 +37,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if Resend API key is configured
     if (!process.env.RESEND_API_KEY) {
       console.error("[forgot-password] RESEND_API_KEY not configured");
-      // Still return success to prevent email enumeration, but log the issue
     }
 
-    // Look up credential — but always return success to prevent email enumeration
+    // Look up credential — always return 200 to prevent email enumeration
     const credential = await getClientCredential(identifier);
 
     if (credential) {
@@ -48,25 +58,28 @@ export async function POST(req: NextRequest) {
       );
 
       const resetUrl = `${BASE_URL}/reset-password?token=${token}`;
+      // Escape user-controlled values before embedding in HTML
+      const safeName = escapeHtml(credential.name ?? credential.email);
+      const safeOrgName = escapeHtml(ORG.name);
+      const safeProductName = escapeHtml(ORG.productName);
 
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
 
         const emailResult = await resend.emails.send({
-          from: "Portal <noreply@yourorg.org>",
+          from: `${safeProductName} <${ORG.fromEmail}>`,
           to: credential.email,
-          cc: ["donyale@yourorg.org"],
-          subject: "Reset Your Your Organization Portal Password",
+          subject: `Reset Your ${safeOrgName} Portal Password`,
           html: `
             <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px 24px;background:#f8fafc;">
               <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.07);">
                 <div style="text-align:center;margin-bottom:24px;">
-                  <div style="font-size:48px;">🔑</div>
+                  <div style="font-size:48px;">&#128273;</div>
                   <h2 style="color:#0f172a;margin:12px 0 4px;font-size:22px;">Password Reset Request</h2>
-                  <p style="color:#64748b;margin:0;font-size:14px;">Your Organization Participant Portal</p>
+                  <p style="color:#64748b;margin:0;font-size:14px;">${safeOrgName} Participant Portal</p>
                 </div>
                 <p style="color:#334155;font-size:15px;line-height:1.6;margin:0 0 12px;">
-                  Hi ${credential.name ?? credential.email},
+                  Hi ${safeName},
                 </p>
                 <p style="color:#334155;font-size:15px;line-height:1.6;margin:0 0 24px;">
                   We received a request to reset your password. Click the button below to create a new password.
@@ -83,7 +96,7 @@ export async function POST(req: NextRequest) {
                 </p>
                 <hr style="border:none;border-top:1px solid #e2e8f0;margin:0 0 20px;" />
                 <p style="color:#94a3b8;font-size:12px;text-align:center;margin:0;">
-                  Your Organization &bull;
+                  ${safeOrgName} &bull;
                   <a href="${BASE_URL}/login/client" style="color:#14b8a6;text-decoration:none;">Participant Portal</a>
                 </p>
               </div>
@@ -92,14 +105,10 @@ export async function POST(req: NextRequest) {
 
         if (emailResult.error) {
           console.error("[forgot-password] Resend API error:", emailResult.error);
-        } else {
-          console.log("[forgot-password] Email sent successfully for:", credential.email, "ID:", emailResult.data?.id);
         }
       } catch (emailErr) {
         console.error("[forgot-password] Email send failed:", emailErr instanceof Error ? emailErr.message : emailErr);
       }
-    } else {
-      console.log("[forgot-password] No credential found for identifier:", identifier);
     }
 
     // Always return success to prevent email enumeration

@@ -18,9 +18,10 @@ export type PolicyResource =
   | "secure-data:smartgoals"
   | "secure-data:requests"
   | "terminal"          // /api/terminal                 — command execution
+  | "enterprise-control" // /api/enterprise/control-center — enterprise control plane
   | "compliance"        // /api/admin/compliance         — full compliance status (staff only)
   | "compliance-summary" // /api/compliance/status       — safe summary for any auth'd user
-  | "audit-log";        // future /api/admin/audit       — audit trail review
+  | "audit-log";        // /api/admin/audit              — audit trail review
 
 interface PolicyRule {
   roles: AppRole[];
@@ -30,47 +31,50 @@ interface PolicyRule {
 /**
  * Top-level policy map.
  *
- * Rules are evaluated in order; the first matching (role + action) wins.
- * If no rule matches, access is denied.
- *
- * Per-key secure-data overrides fall back to "secure-data" if not explicitly listed.
+ * Admin always has full access — the admin role check is enforced in middleware,
+ * but we include admin in every rule so can() / enforce() work correctly for
+ * server-side policy checks inside route handlers.
  */
 const POLICIES: Record<string, PolicyRule[]> = {
   "secure-data": [
-    // Staff can read/write any data key for any user (case worker access)
+    { roles: ["admin"], actions: ["read", "write", "admin"] },
     { roles: ["staff"], actions: ["read", "write"] },
-    // Clients can only read/write their own data (enforced in route, not here)
     { roles: ["client"], actions: ["read", "write"] },
   ],
 
-  // Override: feedback and shoutouts are write-only for clients (they submit, not read history)
   "secure-data:feedback": [
+    { roles: ["admin"], actions: ["read", "write", "admin"] },
     { roles: ["staff"], actions: ["read", "write"] },
     { roles: ["client"], actions: ["write"] },
   ],
   "secure-data:shoutouts": [
+    { roles: ["admin"], actions: ["read", "write", "admin"] },
     { roles: ["staff"], actions: ["read", "write"] },
     { roles: ["client"], actions: ["write"] },
   ],
 
   "terminal": [
-    // Only staff can execute commands
+    { roles: ["admin"], actions: ["execute", "admin"] },
     { roles: ["staff"], actions: ["execute"] },
   ],
 
+  "enterprise-control": [
+    { roles: ["admin"], actions: ["read", "write", "admin"] },
+  ],
+
   "compliance": [
-    // Only staff can view the full admin compliance status
+    { roles: ["admin"], actions: ["read", "write", "admin"] },
     { roles: ["staff"], actions: ["read", "admin"] },
   ],
 
   "compliance-summary": [
-    // Any authenticated user can view the client-safe security summary
+    { roles: ["admin"], actions: ["read"] },
     { roles: ["staff"], actions: ["read"] },
     { roles: ["client"], actions: ["read"] },
   ],
 
   "audit-log": [
-    // Only staff can read the audit trail
+    { roles: ["admin"], actions: ["read", "admin"] },
     { roles: ["staff"], actions: ["read"] },
   ],
 };
@@ -81,6 +85,8 @@ const POLICIES: Record<string, PolicyRule[]> = {
  * Falls back from "secure-data:{key}" → "secure-data" if no specific rule exists.
  */
 export function can(role: AppRole, resource: PolicyResource, action: PolicyAction): boolean {
+  // Admin bypasses all policy checks
+  if (role === "admin") return true;
   const rules = POLICIES[resource] ?? POLICIES[resource.split(":")[0]] ?? [];
   return rules.some(
     (rule) => rule.roles.includes(role) && rule.actions.includes(action)

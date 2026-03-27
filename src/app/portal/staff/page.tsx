@@ -243,7 +243,7 @@ export default function MainDashboard() {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-2 h-8 bg-indigo-500 rounded-full" />
-              <span className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em]">Your Organization · Case Management</span>
+              <span className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em]">T.O.O.LS INC · Case Management</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase italic mb-2">
               Staff <span className="text-teal-400">Operations</span> Hub

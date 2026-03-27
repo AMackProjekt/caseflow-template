@@ -3,10 +3,12 @@ import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../convex/_generated/api";
 import { Resend } from "resend";
 import { randomBytes } from "crypto";
+import { ORG } from "@/config/org";
+import { getBaseUrl } from "@/lib/runtime-config";
 
-const APPROVE_ADMIN_EMAIL = "donyale@yourorg.org";
-const DENY_ADMIN_EMAIL = "noreply@yourorg.org";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://caseflow-template.vercel.app";
+const ADMIN_NOTIFY_EMAIL = process.env.ADMIN_NOTIFY_EMAIL ?? ORG.supportEmail;
+const ADMIN_NOTIFY_EMAIL_2 = process.env.ADMIN_NOTIFY_EMAIL_2 ?? ADMIN_NOTIFY_EMAIL;
+const BASE_URL = getBaseUrl();
 
 function requestDetailsTable(name: string, email: string, note: string | undefined, date: string) {
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
@@ -94,23 +96,23 @@ export async function POST(req: NextRequest) {
           Each link is single-use and will expire once acted upon. Only one action can be taken per request.
         </p>
         <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;" />
-        <p style="color:#94a3b8;font-size:12px;margin:0;">Your Organization — Staff Portal System &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
+        <p style="color:#94a3b8;font-size:12px;margin:0;">${ORG.name} — Staff Portal System &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
       </div>
     </div>
   `;
 
-  // Send to donyale@yourorg.org (RESEND_API_KEY)
+  // Send admin notification (primary)
   await resendApprove.emails.send({
-    from: "Portal <onboarding@resend.dev>",
-    to: APPROVE_ADMIN_EMAIL,
+    from: `${ORG.productName} <${ORG.fromEmail}>`,
+    to: ADMIN_NOTIFY_EMAIL,
     subject: `[Action Required] New Portal Access Request — ${name}`,
     html: adminEmailHtml,
   });
 
-  // Send to noreply@yourorg.org (RESEND_API_KEY_2)
+  // Send admin notification (secondary)
   await resendDeny.emails.send({
-    from: "Portal <onboarding@resend.dev>",
-    to: DENY_ADMIN_EMAIL,
+    from: `${ORG.productName} <${ORG.fromEmail}>`,
+    to: ADMIN_NOTIFY_EMAIL_2,
     subject: `[Action Required] New Portal Access Request — ${name}`,
     html: adminEmailHtml,
   });

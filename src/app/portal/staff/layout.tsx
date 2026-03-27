@@ -139,7 +139,7 @@ function StaffLayoutContent({ children }: { children: React.ReactNode }) {
       {/* Sidebar */}
       <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-charcoal-900 text-slate-300 flex flex-col transition-transform duration-300 md:static md:translate-x-0 md:z-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="h-16 flex items-center px-6 border-b border-charcoal-800">
-          <span className="font-bold text-white text-lg tracking-wide">CaseFlow Command</span>
+          <span className="font-bold text-white text-lg tracking-wide">CaseFlow Operations</span>
         </div>
         
         <nav className="flex-1 px-4 py-6 space-y-1">

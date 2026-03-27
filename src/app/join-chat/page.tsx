@@ -65,14 +65,14 @@ export default function JoinChatPage() {
             <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
               <Image
                 src="/amp-logo.jpeg"
-                alt="Your Organization"
+                alt="T.O.O.LS INC"
                 width={36}
                 height={36}
                 className="rounded-xl object-cover"
               />
             </div>
             <div>
-              <p className="text-teal-100 text-xs font-bold uppercase tracking-widest">Your Organization</p>
+              <p className="text-teal-100 text-xs font-bold uppercase tracking-widest">T.O.O.LS INC</p>
               <h1 className="text-white text-xl font-black leading-tight">Join the Team Channel</h1>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function JoinChatPage() {
           </div>
 
           <div className="px-8 pb-6 text-center text-xs text-slate-400">
-            Your Organization · Team Channel · Google Chat
+            T.O.O.LS INC · Team Channel · Google Chat
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { ORG } from "@/config/org";
 
-const TO_EMAIL = "donyale@yourorg.org";
-const CC_EMAIL = "noreply@yourorg.org";
-const FROM_EMAIL = "CaseFlow <noreply@yourorg.org>";
+const TO_EMAIL = process.env.HMIS_REPORT_EMAIL ?? ORG.supportEmail;
+const FROM_EMAIL = `CaseFlow Operations <${ORG.fromEmail}>`;
 
 type HmisNote = {
   clientName: string;
@@ -41,7 +41,7 @@ function buildEmailHtml(notes: HmisNote[], date: string): string {
     
     <!-- Header -->
     <div style="background:linear-gradient(135deg,#0f766e,#0d9488);padding:32px 40px;">
-      <p style="color:#ccfbf1;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 8px;">Your Organization · CaseFlow</p>
+      <p style="color:#ccfbf1;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 8px;">T.O.O.LS INC · CaseFlow Operations</p>
       <h1 style="color:#ffffff;font-size:24px;font-weight:800;margin:0 0 4px;">End-of-Day HMIS Summary</h1>
       <p style="color:#99f6e4;font-size:14px;margin:0;">${formattedDate}</p>
     </div>
@@ -78,7 +78,7 @@ function buildEmailHtml(notes: HmisNote[], date: string): string {
     <!-- Footer -->
     <div style="padding:20px 40px;background:#f8fafc;border-top:1px solid #e2e8f0;">
       <p style="margin:0;font-size:12px;color:#94a3b8;text-align:center;">
-        Your Organization · CaseFlow Portal · This is an automated end-of-day report.
+        T.O.O.LS INC · CaseFlow Operations Portal · This is an automated end-of-day report.
       </p>
     </div>
   </div>
@@ -105,7 +105,6 @@ export async function POST(req: NextRequest) {
   const { error } = await resend.emails.send({
     from: FROM_EMAIL,
     to: [TO_EMAIL],
-    cc: [CC_EMAIL],
     subject: `✓ HMIS EOD Report — ${formattedDate} (${notes.length} note${notes.length === 1 ? "" : "s"})`,
     html: buildEmailHtml(notes, date),
   });

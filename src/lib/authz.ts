@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 
-export type AppRole = "staff" | "client";
+export type AppRole = "staff" | "client" | "admin";
 
 export async function getAuthContext() {
   const session = await auth();
@@ -14,7 +14,13 @@ export async function getAuthContext() {
   };
 }
 
-export function hasRole(required: AppRole, role: AppRole) {
-  if (required === "client") return role === "client" || role === "staff";
-  return role === "staff";
+/**
+ * Returns true if the caller's role satisfies the required minimum role.
+ * Hierarchy: admin > staff > client
+ */
+export function hasRole(required: AppRole, role: AppRole): boolean {
+  if (required === "client") return true; // everyone qualifies
+  if (required === "staff") return role === "staff" || role === "admin";
+  if (required === "admin") return role === "admin";
+  return false;
 }

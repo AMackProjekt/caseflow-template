@@ -200,7 +200,7 @@ export default function HmisUploadSidebar() {
               )}
             </button>
             <p className="text-[10px] text-slate-600 text-center mt-2 leading-relaxed">
-              Sends to donyale@yourorg.org<br />cc noreply@yourorg.org
+                  Recipient configured via HMIS_REPORT_EMAIL env var
             </p>
           </>
         )}

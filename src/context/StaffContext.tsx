@@ -289,7 +289,7 @@ export function StaffProvider({ children }: { children: React.ReactNode }) {
     _updateParticipant({ slot, name, environment, status });
   };
 
-  const mission = "The mission of Your Organization is to respond to the needs of communities by creating innovative and cost-effective programs to empower and stabilize the lives of underserved families and individuals.";
+  const mission = "T.O.O.LS INC provides intelligent tools and platforms for social services and case management organizations, empowering frontline workers to deliver better outcomes.";
 
   return (
     <StaffContext.Provider value={{

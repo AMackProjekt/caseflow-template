@@ -12,7 +12,7 @@ const { promisify } = require("util");
 require("dotenv").config({ path: ".env.local" });
 
 const email = "dthreemack@gmail.com";
-const password = "DFCHANGEFirst";
+const password = "ChangeMe1st!";
 const username = "dthreemack";
 const name = "Test Client";
 

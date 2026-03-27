@@ -1,8 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ConvexHttpClient } from "convex/browser";
+import { timingSafeEqual } from "crypto";
 import { api } from "../../../../../convex/_generated/api";
+import { auth } from "@/auth";
 
 const SEED_TOKEN = process.env.SETUP_TOKEN ?? "";
+
+function tokenMatches(provided: string): boolean {
+  if (!SEED_TOKEN || !provided) return false;
+  try {
+    const a = Buffer.from(provided, "utf8");
+    const b = Buffer.from(SEED_TOKEN, "utf8");
+    if (a.length !== b.length) return false;
+    return timingSafeEqual(a, b);
+  } catch {
+    return false;
+  }
+}
 
 // Case Managers — alphabetical order
 const CASE_MANAGERS = [
@@ -19,8 +33,13 @@ const CASE_MANAGERS = [
 ];
 
 export async function POST(req: NextRequest) {
-  const token = req.headers.get("authorization")?.replace("Bearer ", "");
-  if (!SEED_TOKEN || !token || token !== SEED_TOKEN) {
+  const session = await auth();
+  const isAdmin = session?.user?.role === "admin";
+
+  const token = req.headers.get("authorization")?.replace("Bearer ", "") ?? "";
+  const isSetupToken = tokenMatches(token);
+
+  if (!isAdmin && !isSetupToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

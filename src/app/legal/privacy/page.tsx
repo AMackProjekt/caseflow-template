@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Privacy Policy — CaseFlow Command" };
+export const metadata = { title: "Privacy Policy — CaseFlow Operations" };
 
 export default function PrivacyPage() {
   const year = new Date().getFullYear();
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">1. Who We Are</h2>
-            <p>Your Organization ("Org," "we," "us," or "our") operates CaseFlow Command, a case management platform developed by [Your Studio]. This Privacy Policy explains how we collect, use, store, and protect personal information and Protected Health Information (PHI) in connection with the Platform.</p>
+            <p>T.O.O.LS INC ("Org," "we," "us," or "our") operates CaseFlow Operations, a case management platform developed by A MackProjekt. This Privacy Policy explains how we collect, use, store, and protect personal information and Protected Health Information (PHI) in connection with the Platform.</p>
           </section>
 
           <section>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
               <li>Restrict how your information is used or shared in certain circumstances.</li>
               <li>File a complaint with the U.S. Department of Health &amp; Human Services Office for Civil Rights.</li>
             </ul>
-            <p className="mt-3">To exercise these rights, contact: <a href="mailto:privacy@yourorg.org" className="text-teal-400 hover:underline">privacy@yourorg.org</a></p>
+            <p className="mt-3">To exercise these rights, contact: <a href="mailto:privacy@sdtoolsinc.org" className="text-teal-400 hover:underline">privacy@sdtoolsinc.org</a></p>
           </section>
 
           <section>
@@ -113,8 +113,8 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-white font-bold text-base mb-2">11. Contact Us</h2>
             <p>For privacy-related questions or to submit a request:<br />
-              <a href="mailto:privacy@yourorg.org" className="text-teal-400 hover:underline">privacy@yourorg.org</a><br />
-              Your Organization · San Diego, California
+              <a href="mailto:privacy@sdtoolsinc.org" className="text-teal-400 hover:underline">privacy@sdtoolsinc.org</a><br />
+              T.O.O.LS INC · San Diego, California
             </p>
           </section>
 
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
           <Link href="/legal/terms" className="hover:text-slate-400 transition-colors">Terms of Use</Link>
           <Link href="/legal/cookies" className="hover:text-slate-400 transition-colors">Cookie Policy</Link>
           <Link href="/" className="hover:text-slate-400 transition-colors">Home</Link>
-          <span className="ml-auto">© {year} Your Organization</span>
+          <span className="ml-auto">© {year} T.O.O.LS INC</span>
         </div>
       </div>
     </div>

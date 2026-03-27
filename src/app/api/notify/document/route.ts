@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { ORG } from "@/config/org";
 
-const FORWARDING_EMAIL = "donyale@yourorg.org";
+const FORWARDING_EMAIL = process.env.NOTIFY_FORWARDING_EMAIL ?? ORG.supportEmail;
 const RESEND = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
   });
 
   await RESEND.emails.send({
-    from: "CaseFlow Notifications <donyale@yourorg.org>",
+    from: `CaseFlow Notifications <${ORG.fromEmail}>`,
     to: FORWARDING_EMAIL,
     subject: `Document Uploaded: ${name}`,
     html: `

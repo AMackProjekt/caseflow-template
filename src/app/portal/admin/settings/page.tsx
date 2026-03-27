@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Settings, Save, CheckCircle2, Eye, EyeOff } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Settings, Save, CheckCircle2, RefreshCw } from "lucide-react";
+import type { EnterpriseSettings } from "@/lib/enterprise-settings";
 
 interface SettingSection {
   title: string;
@@ -9,11 +10,11 @@ interface SettingSection {
 }
 
 interface SettingItem {
-  key: string;
+  key: keyof EnterpriseSettings;
   label: string;
   description: string;
   type: "toggle" | "text" | "select";
-  defaultValue: string | boolean;
+  defaultValue: EnterpriseSettings[keyof EnterpriseSettings];
   options?: string[];
 }
 
@@ -31,7 +32,7 @@ const SECTIONS: SettingSection[] = [
     items: [
       { key: "notify_new_client", label: "Notify on new client intake", description: "Send Google Chat message when a new client is added.", type: "toggle", defaultValue: true },
       { key: "notify_request", label: "Notify on client request", description: "Send Google Chat alert when a client submits a new request.", type: "toggle", defaultValue: false },
-      { key: "admin_email", label: "Admin notification email", description: "Where compliance alerts and critical notices are sent.", type: "text", defaultValue: "admin@yourorg.org" },
+      { key: "admin_email", label: "Admin notification email", description: "Where compliance alerts and critical notices are sent.", type: "text", defaultValue: "admin@sdtoolsinc.org" },
     ],
   },
   {
@@ -53,25 +54,62 @@ const SECTIONS: SettingSection[] = [
 ];
 
 export default function SettingsPage() {
-  const [values, setValues] = useState<Record<string, string | boolean>>(() =>
-    Object.fromEntries(
-      SECTIONS.flatMap((s) => s.items.map((i) => [i.key, i.defaultValue]))
-    )
-  );
+  const [values, setValues] = useState<EnterpriseSettings | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function toggle(key: string) {
-    setValues((v) => ({ ...v, [key]: !v[key] }));
+  async function load() {
+    setLoading(true);
+    setError(null);
+    const res = await fetch("/api/enterprise/control-center", { cache: "no-store" });
+    if (!res.ok) {
+      setLoading(false);
+      setError("Could not load settings.");
+      return;
+    }
+    const data = (await res.json()) as { settings: EnterpriseSettings };
+    setValues(data.settings);
+    setLoading(false);
   }
 
-  function set(key: string, val: string) {
-    setValues((v) => ({ ...v, [key]: val }));
+  useEffect(() => {
+    void load();
+  }, []);
+
+  function toggle(key: keyof EnterpriseSettings) {
+    setValues((v) => (v ? { ...v, [key]: !v[key] } : v));
   }
 
-  function save() {
-    // In production this would persist to Convex / env; here we just acknowledge
+  function set(key: keyof EnterpriseSettings, val: string) {
+    setValues((v) => (v ? { ...v, [key]: val } : v));
+  }
+
+  async function save() {
+    if (!values) return;
+    setSaving(true);
+    setError(null);
+    const res = await fetch("/api/enterprise/control-center", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
+    setSaving(false);
+    if (!res.ok) {
+      setError("Failed to save settings.");
+      return;
+    }
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
+  }
+
+  if (loading || !values) {
+    return (
+      <div className="bg-white rounded-xl border border-slate-200 p-8 text-sm text-slate-500">
+        Loading settings...
+      </div>
+    );
   }
 
   return (
@@ -83,12 +121,24 @@ export default function SettingsPage() {
           </h1>
           <p className="text-slate-500 text-sm mt-0.5">Portal-wide configuration — supervisor access only</p>
         </div>
-        <button onClick={save}
+        <div className="flex items-center gap-2">
+          <button onClick={() => void load()}
+            className="flex items-center gap-2 px-3 py-2 border border-slate-200 text-slate-600 text-sm rounded-lg hover:bg-slate-50 transition">
+            <RefreshCw className="w-4 h-4" /> Refresh
+          </button>
+          <button onClick={() => void save()} disabled={saving}
           className="flex items-center gap-2 px-4 py-2 bg-violet-600 text-white text-sm rounded-lg hover:bg-violet-700 transition">
           {saved ? <CheckCircle2 className="w-4 h-4" /> : <Save className="w-4 h-4" />}
-          {saved ? "Saved!" : "Save Changes"}
-        </button>
+          {saving ? "Saving..." : saved ? "Saved!" : "Save Changes"}
+          </button>
+        </div>
       </div>
+
+      {error && (
+        <div className="bg-rose-50 border border-rose-200 rounded-lg p-3 text-sm text-rose-700">
+          {error}
+        </div>
+      )}
 
       {SECTIONS.map((section) => (
         <div key={section.title} className="bg-white rounded-xl border border-slate-200">
@@ -106,16 +156,14 @@ export default function SettingsPage() {
                   <button
                     onClick={() => toggle(item.key)}
                     title={item.label}
-                    className={`w-10 h-5.5 rounded-full transition-colors relative shrink-0 ${
+                    className={`w-10 h-[22px] rounded-full transition-colors relative shrink-0 ${
                       values[item.key] ? "bg-violet-600" : "bg-slate-200"
                     }`}
-                    style={{ height: "22px", width: "40px" }}
                   >
                     <span
-                      className={`absolute top-0.5 left-0.5 w-4.5 h-4.5 bg-white rounded-full shadow transition-transform ${
+                      className={`absolute top-0.5 left-0.5 w-[18px] h-[18px] bg-white rounded-full shadow transition-transform ${
                         values[item.key] ? "translate-x-[18px]" : ""
                       }`}
-                      style={{ width: "18px", height: "18px" }}
                     />
                   </button>
                 )}

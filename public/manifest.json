@@ -1,6 +1,6 @@
 {
-  "name": "Your Organization — Participant Portal",
-  "short_name": "DFC Portal",
+  "name": "CaseFlow Operations — Participant Portal",
+  "short_name": "SDTOOLSINC",
   "description": "Access your goals, messages, and case support resources — even offline.",
   "start_url": "/portal/client",
   "id": "/portal/client",

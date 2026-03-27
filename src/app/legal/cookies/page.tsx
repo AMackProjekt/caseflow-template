@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Cookie Policy — CaseFlow Command" };
+export const metadata = { title: "Cookie Policy — CaseFlow Operations" };
 
 export default function CookiesPage() {
   const year = new Date().getFullYear();
@@ -18,7 +18,7 @@ export default function CookiesPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">1. What Are Cookies</h2>
-            <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work efficiently, remember your preferences, and provide security. CaseFlow Command uses cookies and similar technologies to operate securely and deliver a consistent experience.</p>
+            <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work efficiently, remember your preferences, and provide security. CaseFlow Operations uses cookies and similar technologies to operate securely and deliver a consistent experience.</p>
           </section>
 
           <section>
@@ -132,7 +132,7 @@ export default function CookiesPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">6. Consent</h2>
-            <p>By using CaseFlow Command, you consent to the placement of strictly necessary cookies as described in this policy. These cannot be opted out of as they are required for the Platform to function securely. For functional and analytics data, you may clear your localStorage and browser cache at any time through your browser settings.</p>
+            <p>By using CaseFlow Operations, you consent to the placement of strictly necessary cookies as described in this policy. These cannot be opted out of as they are required for the Platform to function securely. For functional and analytics data, you may clear your localStorage and browser cache at any time through your browser settings.</p>
           </section>
 
           <section>
@@ -142,7 +142,7 @@ export default function CookiesPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">8. Contact</h2>
-            <p>For questions about our use of cookies: <a href="mailto:privacy@yourorg.org" className="text-teal-400 hover:underline">privacy@yourorg.org</a></p>
+            <p>For questions about our use of cookies: <a href="mailto:privacy@sdtoolsinc.org" className="text-teal-400 hover:underline">privacy@sdtoolsinc.org</a></p>
           </section>
 
         </div>
@@ -151,7 +151,7 @@ export default function CookiesPage() {
           <Link href="/legal/terms" className="hover:text-slate-400 transition-colors">Terms of Use</Link>
           <Link href="/legal/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
           <Link href="/" className="hover:text-slate-400 transition-colors">Home</Link>
-          <span className="ml-auto">© {year} Your Organization</span>
+          <span className="ml-auto">© {year} T.O.O.LS INC</span>
         </div>
       </div>
     </div>

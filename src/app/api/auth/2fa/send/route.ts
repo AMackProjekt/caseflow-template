@@ -4,8 +4,9 @@ import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../../../convex/_generated/api";
 import { Resend } from "resend";
 import { createHmac, randomInt } from "crypto";
+import { ORG } from "@/config/org";
 
-const RESEND_FROM = "CaseFlow Security <donyale@yourorg.org>";
+const RESEND_FROM = `CaseFlow Security <${ORG.fromEmail}>`;
 
 function hashCode(code: string): string {
   const secret = process.env.TWO_FA_SECRET ?? "fallback-dev-secret";
@@ -45,7 +46,7 @@ export async function POST(_req: NextRequest) {
           <div style="background:#f8fafc;border:2px dashed #cbd5e1;border-radius:12px;text-align:center;padding:24px 0;margin-bottom:24px;">
             <span style="font-size:42px;font-weight:900;letter-spacing:.25em;color:#0f172a;">${code}</span>
           </div>
-          <p style="color:#94a3b8;font-size:12px;">If you did not attempt to sign in, please contact <a href="mailto:donyale@yourorg.org" style="color:#14b8a6;">donyale@yourorg.org</a> immediately.</p>
+          <p style="color:#94a3b8;font-size:12px;">If you did not attempt to sign in, please contact <a href="mailto:${ORG.supportEmail}" style="color:#14b8a6;">${ORG.supportEmail}</a> immediately.</p>
         </div>
       </div>`,
   });

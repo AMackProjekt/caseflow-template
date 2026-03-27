@@ -22,7 +22,7 @@ const INTEGRATIONS: Integration[] = [
     icon: Users,
     category: "google",
     status: "connected",
-    features: ["Staff SSO", "Client SSO", "Token-based sessions", "Domain enforcement (yourorg.org)"],
+    features: ["Staff SSO", "Client SSO", "Token-based sessions", "Domain enforcement (sdtoolsinc.org)"],
   },
   {
     id: "google-chat",

@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../../convex/_generated/api";
 import { Resend } from "resend";
+import { ORG } from "@/config/org";
+import { getBaseUrl } from "@/lib/runtime-config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://caseflow-template.vercel.app";
+const BASE_URL = getBaseUrl();
 
 const html = (title: string, color: string, icon: string, body: string) => `
 <!DOCTYPE html>
@@ -56,21 +58,21 @@ export async function GET(req: NextRequest) {
   await convex.mutation(api.functions.updateSignupRequestStatus, { token, status: "denied" });
 
   await resend.emails.send({
-    from: "Portal <onboarding@resend.dev>",
+    from: `${ORG.productName} <${ORG.fromEmail}>`,
     to: request.email,
-    subject: "Update on Your Your Organization Portal Access Request",
+    subject: `Update on Your ${ORG.name} Portal Access Request`,
     html: `
       <div style="font-family:sans-serif;max-width:620px;margin:0 auto;padding:32px 24px;background:#f8fafc;">
         <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.07);">
           <div style="text-align:center;margin-bottom:28px;">
             <div style="font-size:52px;margin-bottom:12px;">📋</div>
             <h2 style="color:#1e3a5f;margin:0 0 8px;font-size:24px;">Request Update</h2>
-            <p style="color:#64748b;margin:0;font-size:15px;">An update on your Your Organization portal access request.</p>
+            <p style="color:#64748b;margin:0;font-size:15px;">An update on your ${ORG.name} portal access request.</p>
           </div>
           <hr style="border:none;border-top:1px solid #e2e8f0;margin:0 0 24px;" />
           <p style="color:#0f172a;font-size:15px;line-height:1.6;">Hi <strong>${request.name}</strong>,</p>
           <p style="color:#0f172a;font-size:15px;line-height:1.6;">
-            Thank you for your interest in the <strong>Your Organization</strong> client portal. After reviewing your request, we are unable to grant portal access at this time.
+            Thank you for your interest in the <strong>${ORG.name}</strong> client portal. After reviewing your request, we are unable to grant portal access at this time.
           </p>
           <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px;margin:20px 0;">
             <p style="color:#991b1b;font-size:14px;margin:0;">
@@ -78,10 +80,10 @@ export async function GET(req: NextRequest) {
             </p>
           </div>
           <p style="color:#64748b;font-size:14px;line-height:1.6;">
-            You may reach us at <a href="mailto:donyale@yourorg.org" style="color:#0d9488;">donyale@yourorg.org</a> if you have questions or would like to discuss your eligibility.
+            You may reach us at <a href="mailto:${ORG.supportEmail}" style="color:#0d9488;">${ORG.supportEmail}</a> if you have questions or would like to discuss your eligibility.
           </p>
           <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;" />
-          <p style="color:#94a3b8;font-size:12px;margin:0;">Your Organization — Client Support Portal &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
+          <p style="color:#94a3b8;font-size:12px;margin:0;">${ORG.name} — Client Support Portal &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
         </div>
       </div>
     `,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: "Terms of Use — CaseFlow Command" };
+export const metadata = { title: "Terms of Use — CaseFlow Operations" };
 
 export default function TermsPage() {
   const year = new Date().getFullYear();
@@ -18,12 +18,12 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">1. Acceptance of Terms</h2>
-            <p>By accessing or using CaseFlow Command (the "Platform") operated by Your Organization ("Org," "we," "us," or "our"), you agree to be bound by these Terms of Use. If you do not agree, you must not access or use the Platform. Your continued use constitutes ongoing acceptance of any updates to these Terms.</p>
+            <p>By accessing or using CaseFlow Operations (the "Platform") operated by T.O.O.LS INC ("Org," "we," "us," or "our"), you agree to be bound by these Terms of Use. If you do not agree, you must not access or use the Platform. Your continued use constitutes ongoing acceptance of any updates to these Terms.</p>
           </section>
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">2. Authorized Users Only</h2>
-            <p>This Platform is restricted to individuals who have been granted explicit access by Your Organization. Authorized users include:</p>
+              <p>This Platform is restricted to individuals who have been granted explicit access by T.O.O.LS INC. Authorized users include:</p>
             <ul className="mt-2 ml-5 list-disc space-y-1 text-slate-400">
               <li><strong className="text-slate-300">Participants (Clients)</strong> — individuals enrolled in Org programs who have been approved for portal access.</li>
               <li><strong className="text-slate-300">Staff</strong> — Org case managers and program staff with valid Org Google Workspace credentials.</li>
@@ -67,12 +67,12 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">7. Intellectual Property</h2>
-            <p>CaseFlow Command is developed and maintained by [Your Studio] for Your Organization. All software, design, branding, and content is the intellectual property of Org and/or [Your Studio]. No portion of the Platform may be copied, reproduced, distributed, or used to create derivative works without prior written consent.</p>
+            <p>CaseFlow Operations is developed and maintained by A MackProjekt for T.O.O.LS INC. All software, design, branding, and content is the intellectual property of T.O.O.LS INC and/or A MackProjekt. No portion of the Platform may be copied, reproduced, distributed, or used to create derivative works without prior written consent.</p>
           </section>
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">8. Limitation of Liability</h2>
-            <p>To the fullest extent permitted by law, Org and [Your Studio] shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of or inability to use the Platform, even if advised of the possibility of such damages. The Platform is provided "as is" without warranties of any kind.</p>
+            <p>To the fullest extent permitted by law, T.O.O.LS INC and A MackProjekt shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of or inability to use the Platform, even if advised of the possibility of such damages. The Platform is provided "as is" without warranties of any kind.</p>
           </section>
 
           <section>
@@ -87,7 +87,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-white font-bold text-base mb-2">11. Contact</h2>
-            <p>For questions regarding these Terms, contact: <a href="mailto:compliance@yourorg.org" className="text-teal-400 hover:underline">compliance@yourorg.org</a></p>
+            <p>For questions regarding these Terms, contact: <a href="mailto:compliance@sdtoolsinc.org" className="text-teal-400 hover:underline">compliance@sdtoolsinc.org</a></p>
           </section>
 
         </div>
@@ -96,7 +96,7 @@ export default function TermsPage() {
           <Link href="/legal/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
           <Link href="/legal/cookies" className="hover:text-slate-400 transition-colors">Cookie Policy</Link>
           <Link href="/" className="hover:text-slate-400 transition-colors">Home</Link>
-          <span className="ml-auto">© {year} Your Organization</span>
+          <span className="ml-auto">© {year} T.O.O.LS INC</span>
         </div>
       </div>
     </div>

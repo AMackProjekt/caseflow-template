@@ -144,7 +144,7 @@ export default function AdminLogin() {
                   autoComplete="username"
                   value={identifier}
                   onChange={(event) => setIdentifier(event.target.value)}
-                  placeholder="name@yourorg.org"
+                      placeholder="name@sdtoolsinc.org"
                   className="w-full rounded-xl border border-violet-800/60 bg-violet-950/50 text-white placeholder:text-violet-700 pl-11 pr-4 py-3 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition"
                   required
                 />

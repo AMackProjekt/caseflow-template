@@ -4,8 +4,10 @@ import { api } from "../../../../../convex/_generated/api";
 import { Resend } from "resend";
 import { upsertClientCredential } from "@/auth";
 import { randomBytes } from "crypto";
+import { ORG } from "@/config/org";
+import { getBaseUrl } from "@/lib/runtime-config";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://caseflow-template.vercel.app";
+const BASE_URL = getBaseUrl();
 
 const html = (title: string, color: string, icon: string, body: string) => `
 <!DOCTYPE html>
@@ -69,10 +71,9 @@ export async function GET(req: NextRequest) {
   const loginUrl = `${BASE_URL}/login/client`;
 
   await resend.emails.send({
-    from: "Portal <noreply@yourorg.org>",
+    from: `${ORG.productName} <${ORG.fromEmail}>`,
     to: request.email,
-    cc: ["donyale@yourorg.org"],
-    subject: "You're Approved — Access the Your Organization Client Portal",
+    subject: `You're Approved — Access the ${ORG.name} Client Portal`,
     html: `
       <div style="font-family:sans-serif;max-width:620px;margin:0 auto;padding:32px 24px;background:#f8fafc;">
         <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.07);">
@@ -84,7 +85,7 @@ export async function GET(req: NextRequest) {
           <hr style="border:none;border-top:1px solid #e2e8f0;margin:0 0 24px;" />
           <p style="color:#0f172a;font-size:15px;line-height:1.6;">Hi <strong>${request.name}</strong>,</p>
           <p style="color:#0f172a;font-size:15px;line-height:1.6;">
-            Welcome to the <strong>Your Organization</strong> client portal! Your access request has been approved and your account is now active.
+            Welcome to the <strong>${ORG.name}</strong> client portal! Your access request has been approved and your account is now active.
           </p>
           <p style="color:#0f172a;font-size:15px;line-height:1.6;">
             Use the credentials below to sign in to the client portal. For safety, change this password after your first secure session.
@@ -110,7 +111,7 @@ export async function GET(req: NextRequest) {
             If you have any questions or need assistance getting started, please reach out to your case manager directly through the portal messaging feature.
           </p>
           <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;" />
-          <p style="color:#94a3b8;font-size:12px;margin:0;">Your Organization — Client Support Portal &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
+          <p style="color:#94a3b8;font-size:12px;margin:0;">${ORG.name} — Client Support Portal &bull; <a href="${BASE_URL}" style="color:#94a3b8;">${BASE_URL}</a></p>
         </div>
       </div>
     `,

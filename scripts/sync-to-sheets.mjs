@@ -2,7 +2,7 @@
 /**
  * sync-to-sheets.mjs
  *
- * Pulls caseload from the DFC portal and writes it to a Google Sheet,
+ * Pulls caseload from the CaseFlow Operations portal and writes it to a Google Sheet,
  * color-coding rows by participant status.
  *
  * SETUP (one-time):
@@ -13,7 +13,7 @@
  *        GOOGLE_SERVICE_ACCOUNT_KEY  = contents of the JSON key file (one line)
  *        GOOGLE_SHEET_ID             = the long ID from your Sheet URL
  *        SETUP_TOKEN                 = your-setup-token-here
- *        DFC_API_BASE                = https://caseflow-template.vercel.app  (or http://localhost:3000)
+ *        PORTAL_API_BASE             = https://sdtoolsinc.vercel.app  (or http://localhost:3000)
  *
  *   5. npm install googleapis   (already done)
  *   6. node scripts/sync-to-sheets.mjs
@@ -23,7 +23,7 @@ import { google } from "googleapis";
 
 // ── Config ──────────────────────────────────────────────────────────────────
 const SHEET_ID   = process.env.GOOGLE_SHEET_ID;
-const API_BASE   = process.env.DFC_API_BASE ?? "https://caseflow-template.vercel.app";
+const API_BASE   = process.env.PORTAL_API_BASE ?? "https://sdtoolsinc.vercel.app";
 const TOKEN      = process.env.SETUP_TOKEN  ?? "your-setup-token-here";
 const KEY_JSON   = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
 const SHEET_NAME = "Caseload";

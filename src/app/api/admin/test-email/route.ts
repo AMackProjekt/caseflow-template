@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { auth } from "@/auth";
+import { ORG } from "@/config/org";
 
 /**
  * POST /api/admin/test-email
@@ -33,16 +34,15 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const result = await resend.emails.send({
-      from: "Portal <noreply@yourorg.org>",
+      from: `${ORG.productName} <${ORG.fromEmail}>`,
       to: email,
-      cc: ["donyale@yourorg.org"],
       subject,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px 24px;background:#f8fafc;">
           <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.07);">
             <h2 style="color:#0f172a;margin:0 0 12px;font-size:22px;">✅ Test Email</h2>
             <p style="color:#334155;font-size:15px;line-height:1.6;margin:0;">
-              This is a test email from the Your Organization Portal.
+              This is a test email from the ${ORG.name} portal.
             </p>
             <p style="color:#64748b;font-size:13px;margin:12px 0 0;">
               If you're seeing this, Resend email delivery is working correctly.

@@ -18,6 +18,7 @@ import {
   ScrollText,
   ChevronRight,
   Gem,
+  Shield,
 } from "lucide-react";
 
 const NAV = [
@@ -118,7 +119,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <main className="ml-64 flex-1 flex flex-col min-h-screen">
         {/* Top bar */}
         <header className="h-14 bg-white border-b border-slate-200 flex items-center px-6 gap-4 sticky top-0 z-20">
-          <div className="flex-1" />
+          <div className="flex-1">
+            <Link
+              href="/portal/enterprise"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-700 bg-cyan-50 border border-cyan-200 hover:bg-cyan-100"
+            >
+              <Shield className="w-3.5 h-3.5" /> Workspace Control Plane
+            </Link>
+          </div>
           <div className="flex items-center gap-2 text-xs text-slate-500">
             <ShieldCheck className="w-4 h-4 text-violet-500" />
             <span>Champion Admin — Full Access</span>

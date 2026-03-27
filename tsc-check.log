@@ -1,0 +1,211 @@
+convex/functions.ts(1,33): error TS2307: Cannot find module './_generated/server' or its corresponding type declarations.
+convex/functions.ts(7,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(7,26): error TS7031: Binding element 'date' implicitly has an 'any' type.
+convex/functions.ts(10,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(24,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(24,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(31,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(31,26): error TS7031: Binding element 'id' implicitly has an 'any' type.
+convex/functions.ts(31,30): error TS7031: Binding element 'checked' implicitly has an 'any' type.
+convex/functions.ts(42,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(42,26): error TS7031: Binding element 'namespace' implicitly has an 'any' type.
+convex/functions.ts(42,37): error TS7031: Binding element 'key' implicitly has an 'any' type.
+convex/functions.ts(45,39): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(53,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(53,26): error TS7031: Binding element 'namespace' implicitly has an 'any' type.
+convex/functions.ts(53,37): error TS7031: Binding element 'key' implicitly has an 'any' type.
+convex/functions.ts(53,42): error TS7031: Binding element 'value' implicitly has an 'any' type.
+convex/functions.ts(56,39): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(70,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(83,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(83,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(90,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(90,26): error TS7031: Binding element 'slot' implicitly has an 'any' type.
+convex/functions.ts(90,32): error TS7031: Binding element 'status' implicitly has an 'any' type.
+convex/functions.ts(93,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(108,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(108,26): error TS7031: Binding element 'slot' implicitly has an 'any' type.
+convex/functions.ts(108,32): error TS7031: Binding element 'name' implicitly has an 'any' type.
+convex/functions.ts(108,38): error TS7031: Binding element 'environment' implicitly has an 'any' type.
+convex/functions.ts(108,51): error TS7031: Binding element 'status' implicitly has an 'any' type.
+convex/functions.ts(111,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(121,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(123,32): error TS7006: Parameter 'p' implicitly has an 'any' type.
+convex/functions.ts(136,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(136,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(139,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(157,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(170,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(170,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(179,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(194,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(194,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(201,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(201,26): error TS7031: Binding element 'id' implicitly has an 'any' type.
+convex/functions.ts(201,30): error TS7031: Binding element 'client' implicitly has an 'any' type.
+convex/functions.ts(210,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(222,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(222,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(231,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(243,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(243,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(252,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(264,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(264,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(273,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(289,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(289,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(298,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(311,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(311,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(321,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(321,26): error TS7031: Binding element 'id' implicitly has an 'any' type.
+convex/functions.ts(321,30): error TS7031: Binding element 'status' implicitly has an 'any' type.
+convex/functions.ts(330,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(341,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(341,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(350,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(406,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(406,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(409,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(429,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(429,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(436,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(436,26): error TS7031: Binding element 'token' implicitly has an 'any' type.
+convex/functions.ts(439,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(449,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(449,26): error TS7031: Binding element 'token' implicitly has an 'any' type.
+convex/functions.ts(449,33): error TS7031: Binding element 'status' implicitly has an 'any' type.
+convex/functions.ts(452,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(469,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(469,26): error TS7031: Binding element 'email' implicitly has an 'any' type.
+convex/functions.ts(469,33): error TS7031: Binding element 'codeHash' implicitly has an 'any' type.
+convex/functions.ts(469,43): error TS7031: Binding element 'expiresAt' implicitly has an 'any' type.
+convex/functions.ts(472,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(483,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(483,26): error TS7031: Binding element 'email' implicitly has an 'any' type.
+convex/functions.ts(483,33): error TS7031: Binding element 'codeHash' implicitly has an 'any' type.
+convex/functions.ts(486,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(501,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(501,26): error TS7031: Binding element 'userEmail' implicitly has an 'any' type.
+convex/functions.ts(504,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(514,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(514,26): error TS7031: Binding element 'userEmail' implicitly has an 'any' type.
+convex/functions.ts(514,37): error TS7031: Binding element 'photoUrl' implicitly has an 'any' type.
+convex/functions.ts(517,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(534,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(534,26): error TS7031: Binding element 'userEmail' implicitly has an 'any' type.
+convex/functions.ts(537,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(549,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(549,26): error TS7031: Binding element 'userEmail' implicitly has an 'any' type.
+convex/functions.ts(552,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(565,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(565,26): error TS7031: Binding element 'userEmail' implicitly has an 'any' type.
+convex/functions.ts(565,37): error TS7031: Binding element 'phone' implicitly has an 'any' type.
+convex/functions.ts(565,44): error TS7031: Binding element 'workPhone' implicitly has an 'any' type.
+convex/functions.ts(565,55): error TS7031: Binding element 'personalEmail' implicitly has an 'any' type.
+convex/functions.ts(565,70): error TS7031: Binding element 'workSchedule' implicitly has an 'any' type.
+convex/functions.ts(568,31): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(584,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(600,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(600,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(609,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(624,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(624,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(627,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(643,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(643,26): error TS7031: Binding element 'id' implicitly has an 'any' type.
+convex/functions.ts(643,30): error TS7031: Binding element 'status' implicitly has an 'any' type.
+convex/functions.ts(652,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(667,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(667,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(674,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(674,26): error TS7031: Binding element 'id' implicitly has an 'any' type.
+convex/functions.ts(683,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(683,26): error TS7031: Binding element 'slot' implicitly has an 'any' type.
+convex/functions.ts(683,32): error TS7031: Binding element 'caseManager' implicitly has an 'any' type.
+convex/functions.ts(686,30): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(698,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(705,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(705,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(717,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(717,26): error TS7031: Binding element 'userA' implicitly has an 'any' type.
+convex/functions.ts(717,33): error TS7031: Binding element 'userB' implicitly has an 'any' type.
+convex/functions.ts(721,33): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(735,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(735,26): error TS7031: Binding element 'senderId' implicitly has an 'any' type.
+convex/functions.ts(735,36): error TS7031: Binding element 'receiverId' implicitly has an 'any' type.
+convex/functions.ts(735,48): error TS7031: Binding element 'senderRole' implicitly has an 'any' type.
+convex/functions.ts(735,60): error TS7031: Binding element 'body' implicitly has an 'any' type.
+convex/functions.ts(735,66): error TS7031: Binding element 'image' implicitly has an 'any' type.
+convex/functions.ts(753,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(755,32): error TS7006: Parameter 'm' implicitly has an 'any' type.
+convex/functions.ts(766,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+convex/functions.ts(766,24): error TS7006: Parameter 'args' implicitly has an 'any' type.
+convex/functions.ts(769,34): error TS7006: Parameter 'q' implicitly has an 'any' type.
+convex/functions.ts(783,19): error TS7006: Parameter 'ctx' implicitly has an 'any' type.
+src/app/api/admin/export-caseload/route.ts(4,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/admin/export-caseload/route.ts(38,59): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/app/api/admin/export-caseload/route.ts(67,64): error TS7006: Parameter 'h' implicitly has an 'any' type.
+src/app/api/admin/export-caseload/route.ts(69,34): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/app/api/admin/seed-caseload/route.ts(4,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/admin/seed-staff/route.ts(4,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/auth/2fa/send/route.ts(4,21): error TS2307: Cannot find module '../../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/auth/2fa/verify/route.ts(4,21): error TS2307: Cannot find module '../../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/profile-photo/route.ts(4,21): error TS2307: Cannot find module '../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/signup-request/approve/route.ts(3,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/signup-request/deny/route.ts(3,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/signup-request/route.ts(3,21): error TS2307: Cannot find module '../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/terminal/route.ts(7,21): error TS2307: Cannot find module '../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/api/terminal/route.ts(112,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(113,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(114,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(115,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(125,24): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(145,16): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(159,23): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(170,28): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(189,16): error TS7006: Parameter 'note' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(199,24): error TS7006: Parameter 'note' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(217,16): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(227,24): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(246,41): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(247,41): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/app/api/terminal/route.ts(248,40): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/app/portal/admin/audit/page.tsx(5,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/audit/page.tsx(7,26): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/caseload/page.tsx(5,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/caseload/page.tsx(7,26): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/demographics/page.tsx(5,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/demographics/page.tsx(7,26): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/housing/page.tsx(5,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/housing/page.tsx(7,30): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/housing/page.tsx(163,92): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ pending: string; active: string; exited: string; }'.
+src/app/portal/admin/page.tsx(4,21): error TS2307: Cannot find module '../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/page.tsx(5,26): error TS2307: Cannot find module '../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/personnel/page.tsx(5,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/personnel/page.tsx(7,30): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/admin/scheduling/page.tsx(4,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/admin/scheduling/page.tsx(6,26): error TS2307: Cannot find module '../../../../../convex/_generated/dataModel' or its corresponding type declarations.
+src/app/portal/client/goals/page.tsx(7,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/client/profile/page.tsx(9,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/caseload/[...slot]/page.tsx(5,21): error TS2307: Cannot find module '@/../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/caseload/[slot]/demographics/page.tsx(4,21): error TS2307: Cannot find module '@/../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/caseload/[slot]/page.tsx(5,21): error TS2307: Cannot find module '@/../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/caseload/[slot]/smart/page.tsx(22,21): error TS2307: Cannot find module '../../../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/casenote/new/page.tsx(10,21): error TS2307: Cannot find module '../../../../../../convex/_generated/api' or its corresponding type declarations.
+src/app/portal/staff/profile/page.tsx(9,21): error TS2307: Cannot find module '../../../../../convex/_generated/api' or its corresponding type declarations.
+src/auth.ts(49,65): error TS2554: Expected 3 arguments, but got 4.
+src/auth.ts(65,72): error TS2554: Expected 3 arguments, but got 4.
+src/components/FloatingChat.tsx(5,21): error TS2307: Cannot find module '../../convex/_generated/api' or its corresponding type declarations.
+src/components/HmisUploadSidebar.tsx(5,21): error TS2307: Cannot find module '../../convex/_generated/api' or its corresponding type declarations.
+src/components/HmisUploadSidebar.tsx(6,25): error TS2307: Cannot find module '../../convex/_generated/dataModel' or its corresponding type declarations.
+src/components/HmisUploadSidebar.tsx(24,38): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/HmisUploadSidebar.tsx(40,29): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/HmisUploadSidebar.tsx(138,22): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/PortalChat.tsx(6,21): error TS2307: Cannot find module '../../convex/_generated/api' or its corresponding type declarations.
+src/context/StaffContext.tsx(5,21): error TS2307: Cannot find module '../../convex/_generated/api' or its corresponding type declarations.
+src/context/StaffContext.tsx(6,25): error TS2307: Cannot find module '../../convex/_generated/dataModel' or its corresponding type declarations.
+src/context/StaffContext.tsx(194,48): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/lib/audit.ts(2,21): error TS2307: Cannot find module '../../convex/_generated/api' or its corresponding type declarations.
+src/lib/db/convex-adapter.ts(3,21): error TS2307: Cannot find module '../../../convex/_generated/api' or its corresponding type declarations.
