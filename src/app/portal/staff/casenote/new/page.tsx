@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, Save, Bolt, FileText, CheckSquare, AlertCircle, Info, Loader2 } from "lucide-react";
+import { ArrowLeft, Save, Bolt, FileText, CheckSquare, Info, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";

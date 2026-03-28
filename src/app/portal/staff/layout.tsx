@@ -13,8 +13,6 @@ import {
   LogOut,
   MessageSquare,
   AlertCircle,
-  Video,
-  UserCheck,
   FileSpreadsheet,
   FileBox,
   Table,
@@ -74,7 +72,7 @@ function BackButton() {
 }
 
 function StaffLayoutContent({ children }: { children: React.ReactNode }) {
-  const { notifications, markNotificationRead } = useStaff();
+  const { notifications, markNotificationRead: _markNotificationRead } = useStaff();
   const { data: session } = useSession();
   const unreadCount = notifications.filter(n => !n.read).length;
 

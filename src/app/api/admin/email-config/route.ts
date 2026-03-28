@@ -7,7 +7,7 @@ import { getBaseUrl } from "@/lib/runtime-config";
  * GET /api/admin/email-config
  * Show email configuration status (admin only)
  */
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
     // Verify user is authenticated and admin
     const session = await auth();

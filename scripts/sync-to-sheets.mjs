@@ -166,7 +166,6 @@ async function main() {
 
   // ── 6. Format: freeze header, bold, color rows ─────────────────────────────
   const numCols = COLUMNS.length;
-  const numRows = rows.length + 1; // +1 for header
 
   // Build row color requests
   const colorRequests = rows.map((row, i) => {

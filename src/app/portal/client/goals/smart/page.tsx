@@ -2,15 +2,9 @@
 
 import { useState } from "react";
 import { 
-  Target, 
   CheckCircle2, 
   ArrowLeft, 
-  Sparkles, 
-  Clock, 
-  ShieldCheck, 
-  ChevronRight,
-  Plus,
-  Zap,
+  Clock,
   Check
 } from "lucide-react";
 import Link from "next/link";

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../../../convex/_generated/api";
-import { ScrollText, Search, Filter } from "lucide-react";
+import { ScrollText, Search } from "lucide-react";
 import type { Doc } from "../../../../../convex/_generated/dataModel";
 
 const ACTION_COLOR: Record<string, string> = {

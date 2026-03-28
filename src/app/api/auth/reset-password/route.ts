@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getEncryptedRecord, setEncryptedRecord } from "@/lib/server-data-store";
 import { decryptJson, encryptJson } from "@/lib/crypto";
 import { upsertClientCredential } from "@/auth";
-import { getBaseUrl } from "@/lib/runtime-config";
 
-const BASE_URL = getBaseUrl();
 
 type PasswordResetToken = {
   email: string;

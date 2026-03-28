@@ -7,7 +7,6 @@ import {
   LayoutDashboard,
   Users,
   UserCog,
-  ClipboardList,
   ShieldCheck,
   BarChart3,
   Home,

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Terminal as TerminalIcon, ChevronRight, Zap, ShieldAlert, Cpu, FileText } from "lucide-react";
+import { Terminal as TerminalIcon, Zap, ShieldAlert, FileText } from "lucide-react";
 import { useStaff } from "@/context/StaffContext";
 
 export default function TerminalPage() {
-  const { participants, caseNotes, documents } = useStaff();
+  const { participants: _participants, caseNotes: _caseNotes, documents: _documents } = useStaff();
   const checkInFormUrl = "https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?subpage=design&token=6ec69437e59a458687568715bd02e703&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAZQOUnpUNzdFMjk2VDVTSVBIQU80QlBBMkpYMVk3US4u&analysis=true";
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([
@@ -53,7 +53,7 @@ export default function TerminalPage() {
       } else {
         newHistory.push("No output returned.");
       }
-    } catch (err) {
+    } catch {
       newHistory.push(`ERROR: API Connectivity failure. Local logic offline.`);
     }
 

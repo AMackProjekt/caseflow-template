@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../../../convex/_generated/api";
-import { BarChart3, Search, Download } from "lucide-react";
+import { BarChart3, Search } from "lucide-react";
 import type { Doc } from "../../../../../convex/_generated/dataModel";
 
 function Bar({ label, value, total, color }: { label: string; value: number; total: number; color: string }) {

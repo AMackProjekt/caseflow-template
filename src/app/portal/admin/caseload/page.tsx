@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../../../convex/_generated/api";
-import { Users, Search, UserCheck, ChevronDown } from "lucide-react";
+import { Users, Search, UserCheck } from "lucide-react";
 import type { Doc } from "../../../../../convex/_generated/dataModel";
 
 const STATUS_COLORS: Record<string, string> = {

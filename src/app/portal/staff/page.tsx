@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { 
-  BarChart3, 
   TrendingUp, 
   CheckCircle2, 
-  AlertCircle,
-  CalendarDays,
   Clock,
   ArrowRight,
   FileText,
   Users,
-  FileUp,
   Bot,
   Zap,
   ListTodo,
@@ -26,10 +22,7 @@ import {
   RotateCcw,
   Coffee,
   Quote,
-  UserCheck,
-  Inbox,
   ShieldCheck,
-  Video,
   ExternalLink,
   Brain,
   Wind,
@@ -37,9 +30,6 @@ import {
   Activity,
   Sparkles,
   Flame,
-  Dumbbell,
-  Info,
-  Star
 } from "lucide-react";
 import { useStaff } from "@/context/StaffContext";
 import IntegrationHub from "@/components/IntegrationHub";
@@ -78,12 +68,12 @@ const WORK_SECS = 25 * 60;
 const BREAK_SECS = 5 * 60;
 
 export default function MainDashboard() {
-  const { participants, documents, caseNotes, notifications, requests, updateRequestStatus, team, mission } = useStaff();
+  const { participants, documents, caseNotes, requests, updateRequestStatus, team, mission } = useStaff();
   
   // Real Logic for Metrics
   const activeCount = participants.filter(p => (p as any).status.includes('Active')).length;
-  const inProgressCount = participants.filter(p => (p as any).status === 'Active - SOP Audit').length;
-  const placementCount = participants.filter(p => (p as any).status === 'Active - Housing Match').length;
+  const _inProgressCount = participants.filter(p => (p as any).status === 'Active - SOP Audit').length;
+  const _placementCount = participants.filter(p => (p as any).status === 'Active - Housing Match').length;
   const pendingCount = requests.filter(r => (r as any).status === 'pending').length;
   const approvedCount = requests.filter(r => (r as any).status === 'approved').length;
 

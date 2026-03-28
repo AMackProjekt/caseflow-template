@@ -9,9 +9,34 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-export default [
+const config = [
+  {
+    ignores: [
+      "**/.next/**",
+      "**/out/**",
+      "**/build/**",
+      "**/next-env.d.ts",
+      "**/convex/_generated/**",
+      "create-test-client.js",
+    ],
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: [".next/**", "out/**", "build/**", "next-env.d.ts"],
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "react/jsx-no-comment-textnodes": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+    },
   },
 ];
+
+export default config;

@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { 
-  Heart, Smile, BookOpen, Megaphone, Lightbulb, Frown, Plus, Quote, Zap, Bot, AlertCircle,
-  ExternalLink, ChevronRight, CheckCircle2, Clock, FileText, ShieldCheck, Upload, MessageSquare,
-  Trash2, Eye, EyeOff, Copy, Check, Send, Users, Video
+  Heart, Smile, BookOpen, Megaphone, Plus, Quote, Zap, AlertCircle,
+  ExternalLink, CheckCircle2, Clock, Upload, MessageSquare,
+  Check, Send, Users, Video
 } from "lucide-react";
-import Link from "next/link";
 import { useStaff } from "@/context/StaffContext";
 
 const QUOTES = [
@@ -118,19 +117,18 @@ const AA_NA_MEETINGS = [
 type MoodType = 'happy' | 'good' | 'neutral' | 'stressed' | 'bad';
 
 export default function ClientDashboard() {
-  const { addJournal, addFeedback, addShoutOut, addRequest } = useStaff();
+  const { addJournal, addFeedback } = useStaff();
   
   const [quote, setQuote] = useState(QUOTES[0]);
   const [activeTab, setActiveTab] = useState("overview");
   const [journalContent, setJournalContent] = useState("");
   const [mood, setMood] = useState<MoodType>("neutral");
-  const [feedbackType, setFeedbackType] = useState<'complaint' | 'suggestion'>('suggestion');
+  const [feedbackType, _setFeedbackType] = useState<'complaint' | 'suggestion'>('suggestion');
   const [feedbackContent, setFeedbackContent] = useState("");
   const [ventMessage, setVentMessage] = useState("");
   const [ventMessages, setVentMessages] = useState<Array<{id: number; msg: string; time: string}>>([]);
-  const [showVentPreview, setShowVentPreview] = useState(false);
+  const [_showVentPreview, _setShowVentPreview] = useState(false);
   const [clothingSizes, setClothingSizes] = useState({ gender: 'male', shirt: 'M', pants: '32', shoes: '10' });
-  const [needsCopy, setNeedsCopy] = useState(false);
 
   useEffect(() => {
     setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
@@ -169,13 +167,6 @@ export default function ClientDashboard() {
   const submitClothingRequest = () => {
     const sizeInfo = `Gender: ${clothingSizes.gender === 'male' ? 'Male'  : 'Female'}, Shirt: ${clothingSizes.shirt}, Pants: ${clothingSizes.pants}, Shoes: ${clothingSizes.shoes}`;
     alert(`✅ Clothing request submitted!\n\n${sizeInfo}\n\nWe'll process your request this week.`);
-  };
-
-  const copyMeetingInfo = (meeting: any) => {
-    const text = `${meeting.type} Meeting\nLocation: ${meeting.location}\nTime: ${meeting.time}\nPhone: ${meeting.phone}`;
-    navigator.clipboard.writeText(text);
-    setNeedsCopy(true);
-    setTimeout(() => setNeedsCopy(false), 2000);
   };
 
   const TABS = [
@@ -545,7 +536,7 @@ export default function ClientDashboard() {
                 {ventMessages.length > 0 && (
                   <div className="mt-6 space-y-3">
                     <p className="text-xs font-bold text-slate-500 uppercase">Community Messages</p>
-                    {ventMessages.map((msg, i) => (
+                    {ventMessages.map((msg) => (
                       <div key={msg.id} className="p-4 bg-gradient-to-r from-purple-50 to-rose-50 border border-purple-200 rounded-lg text-sm">
                         <p className="text-charcoal-900 italic mb-2">\"{msg.msg}\"</p>
                         <p className="text-xs text-slate-500">—Anonymous • {msg.time}</p>

@@ -10,7 +10,6 @@ import {
   FileText,
   ClipboardList,
   ScrollText,
-  ShieldCheck,
   TrendingUp,
   AlertCircle,
 } from "lucide-react";

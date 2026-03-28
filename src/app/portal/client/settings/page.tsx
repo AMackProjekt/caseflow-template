@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Mail, Bell, Shield, Sun, Moon, Monitor, Save, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Bell, Shield, Sun, Moon, Monitor, Save, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
 

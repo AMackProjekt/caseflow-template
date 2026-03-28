@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Bell, ShieldPlus, FileText, UploadCloud, Save, CheckCircle2, MessageSquare, BrainCircuit, Bot, Sun, Moon, Monitor } from "lucide-react";
+import { Mail, ShieldPlus, Save, CheckCircle2, MessageSquare, BrainCircuit, Bot, Sun, Moon, Monitor } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function SettingsPage() {

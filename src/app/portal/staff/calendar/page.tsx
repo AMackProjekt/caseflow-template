@@ -5,15 +5,12 @@ import {
   Calendar as CalendarIcon, 
   MapPin, 
   Clock, 
-  Video, 
-  Link as LinkIcon, 
+  Video,
   CheckCircle2, 
   Bot, 
   Send,
   Zap,
-  MoreVertical,
-  Settings2,
-  RefreshCw
+  MoreVertical
 } from "lucide-react";
 
 export default function CalendarIntegrations() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useSession } from "next-auth/react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
@@ -96,7 +96,7 @@ function ContactsList({
   contacts,
   selected,
   onSelect,
-  myName,
+  myName: _myName,
 }: {
   contacts: Contact[];
   selected: Contact | null;
@@ -170,7 +170,7 @@ function ChatArea({
     userA: myId,
     userB: contact.id,
   });
-  const messages = (rawMessages ?? []) as DM[];
+  const messages = useMemo(() => (rawMessages ?? []) as DM[], [rawMessages]);
 
   const sendDM = useMutation(api.functions.sendDirectMessage);
 
@@ -389,7 +389,7 @@ export default function PortalChat({ role }: { role: "staff" | "client" }) {
     ];
   }
 
-  const hasContacts = contacts.length > 0;
+  const _hasContacts = contacts.length > 0;
 
   return (
     <>

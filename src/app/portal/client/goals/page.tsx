@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, CheckCircle2, Clock, ArrowRight, ShieldCheck, Flag, Sparkles } from "lucide-react";
+import { Target, CheckCircle2, ArrowRight, ShieldCheck, Flag, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useQuery } from "convex/react";

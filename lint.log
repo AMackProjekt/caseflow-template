@@ -1,0 +1,231 @@
+
+> caseflow-template@0.1.0 lint
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+
+./src/app/api/admin/email-config/route.ts
+10:27  Warning: 'req' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/auth/2fa/send/route.ts
+16:28  Warning: '_req' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/auth/reset-password/route.ts
+7:7  Warning: 'BASE_URL' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/profile-photo/route.ts
+69:30  Warning: 'req' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/legal/cookies/page.tsx
+72:84  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+112:282  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+113:278  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+119:138  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+140:72  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+140:85  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/legal/privacy/page.tsx
+21:30  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:35  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:37  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:41  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:43  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:47  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:52  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:56  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+41:81  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+104:76  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/legal/terms/page.tsx
+21:63  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:72  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:101  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:106  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:108  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:112  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:114  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:118  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:123  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+21:127  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+41:106  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+75:307  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+75:313  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/portal/admin/audit/page.tsx
+6:30  Warning: 'Filter' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/admin/caseload/page.tsx
+6:36  Warning: 'ChevronDown' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/admin/demographics/page.tsx
+6:29  Warning: 'Download' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/admin/layout.tsx
+10:3  Warning: 'ClipboardList' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/admin/page.tsx
+13:3  Warning: 'ShieldCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/client/goals/page.tsx
+3:32  Warning: 'Clock' is defined but never used.  @typescript-eslint/no-unused-vars
+11:75  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/portal/client/goals/smart/page.tsx
+5:3  Warning: 'Target' is defined but never used.  @typescript-eslint/no-unused-vars
+8:3  Warning: 'Sparkles' is defined but never used.  @typescript-eslint/no-unused-vars
+10:3  Warning: 'ShieldCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+11:3  Warning: 'ChevronRight' is defined but never used.  @typescript-eslint/no-unused-vars
+12:3  Warning: 'Plus' is defined but never used.  @typescript-eslint/no-unused-vars
+13:3  Warning: 'Zap' is defined but never used.  @typescript-eslint/no-unused-vars
+161:106  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+161:123  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+164:36  Error: Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+./src/app/portal/client/page.tsx
+5:38  Warning: 'Lightbulb' is defined but never used.  @typescript-eslint/no-unused-vars
+5:49  Warning: 'Frown' is defined but never used.  @typescript-eslint/no-unused-vars
+5:74  Warning: 'Bot' is defined but never used.  @typescript-eslint/no-unused-vars
+6:17  Warning: 'ChevronRight' is defined but never used.  @typescript-eslint/no-unused-vars
+6:52  Warning: 'FileText' is defined but never used.  @typescript-eslint/no-unused-vars
+6:62  Warning: 'ShieldCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+7:3  Warning: 'Trash2' is defined but never used.  @typescript-eslint/no-unused-vars
+7:11  Warning: 'Eye' is defined but never used.  @typescript-eslint/no-unused-vars
+7:16  Warning: 'EyeOff' is defined but never used.  @typescript-eslint/no-unused-vars
+7:24  Warning: 'Copy' is defined but never used.  @typescript-eslint/no-unused-vars
+9:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+121:36  Warning: 'addShoutOut' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+121:49  Warning: 'addRequest' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+127:24  Warning: 'setFeedbackType' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+131:10  Warning: 'showVentPreview' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+131:27  Warning: 'setShowVentPreview' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+133:10  Warning: 'needsCopy' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+174:9  Warning: 'copyMeetingInfo' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+174:37  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+207:14  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+207:23  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+371:92  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+548:45  Warning: 'i' is defined but never used.  @typescript-eslint/no-unused-vars
+550:71  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+550:82  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+634:76  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+636:116  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+636:158  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+662:81  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+662:97  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+679:78  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+681:24  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+681:28  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+681:142  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+706:111  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+739:83  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+749:73  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+750:85  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+750:172  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/portal/client/profile/page.tsx
+139:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/portal/client/settings/page.tsx
+4:21  Warning: 'Mail' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/staff/calendar/page.tsx
+9:11  Warning: 'LinkIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+15:3  Warning: 'Settings2' is defined but never used.  @typescript-eslint/no-unused-vars
+16:3  Warning: 'RefreshCw' is defined but never used.  @typescript-eslint/no-unused-vars
+73:76  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/portal/staff/caseload/page.tsx
+55:40  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/portal/staff/caseload/[slot]/smart/page.tsx
+7:3  Warning: 'Target' is defined but never used.  @typescript-eslint/no-unused-vars
+8:3  Warning: 'CheckCircle2' is defined but never used.  @typescript-eslint/no-unused-vars
+10:3  Warning: 'Sparkles' is defined but never used.  @typescript-eslint/no-unused-vars
+12:3  Warning: 'ShieldCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+13:3  Warning: 'ChevronRight' is defined but never used.  @typescript-eslint/no-unused-vars
+14:3  Warning: 'Plus' is defined but never used.  @typescript-eslint/no-unused-vars
+15:3  Warning: 'Zap' is defined but never used.  @typescript-eslint/no-unused-vars
+16:3  Warning: 'Check' is defined but never used.  @typescript-eslint/no-unused-vars
+30:75  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+102:159  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+102:195  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+121:149  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+121:187  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+175:141  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+175:159  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/portal/staff/casenote/new/page.tsx
+4:56  Warning: 'AlertCircle' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/staff/help/page.tsx
+120:93  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/app/portal/staff/layout.tsx
+16:3  Warning: 'Video' is defined but never used.  @typescript-eslint/no-unused-vars
+17:3  Warning: 'UserCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+77:26  Warning: 'markNotificationRead' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/portal/staff/page.tsx
+6:3  Warning: 'BarChart3' is defined but never used.  @typescript-eslint/no-unused-vars
+9:3  Warning: 'AlertCircle' is defined but never used.  @typescript-eslint/no-unused-vars
+10:3  Warning: 'CalendarDays' is defined but never used.  @typescript-eslint/no-unused-vars
+15:3  Warning: 'FileUp' is defined but never used.  @typescript-eslint/no-unused-vars
+29:3  Warning: 'UserCheck' is defined but never used.  @typescript-eslint/no-unused-vars
+30:3  Warning: 'Inbox' is defined but never used.  @typescript-eslint/no-unused-vars
+32:3  Warning: 'Video' is defined but never used.  @typescript-eslint/no-unused-vars
+40:3  Warning: 'Dumbbell' is defined but never used.  @typescript-eslint/no-unused-vars
+41:3  Warning: 'Info' is defined but never used.  @typescript-eslint/no-unused-vars
+42:3  Warning: 'Star' is defined but never used.  @typescript-eslint/no-unused-vars
+81:47  Warning: 'notifications' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+84:54  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+85:9  Warning: 'inProgressCount' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+85:58  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+86:9  Warning: 'placementCount' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+86:57  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+87:51  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+88:52  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+252:15  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+252:25  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+768:96  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+768:107  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/portal/staff/profile/page.tsx
+152:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/portal/staff/settings/page.tsx
+4:16  Warning: 'Bell' is defined but never used.  @typescript-eslint/no-unused-vars
+4:34  Warning: 'FileText' is defined but never used.  @typescript-eslint/no-unused-vars
+4:44  Warning: 'UploadCloud' is defined but never used.  @typescript-eslint/no-unused-vars
+45:87  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+205:141  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+205:154  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/portal/staff/terminal/page.tsx
+4:36  Warning: 'ChevronRight' is defined but never used.  @typescript-eslint/no-unused-vars
+4:68  Warning: 'Cpu' is defined but never used.  @typescript-eslint/no-unused-vars
+8:11  Warning: 'participants' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+8:25  Warning: 'caseNotes' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+8:36  Warning: 'documents' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+56:14  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/request-access/page.tsx
+50:89  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/components/PortalChat.tsx
+99:3  Warning: 'myName' is defined but never used.  @typescript-eslint/no-unused-vars
+173:9  Warning: The 'messages' logical expression could make the dependencies of useEffect Hook (at line 179) change on every render. To fix this, wrap the initialization of 'messages' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+246:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+275:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+392:9  Warning: 'hasContacts' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/context/StaffContext.tsx
+136:7  Warning: 'DATA_KEYS' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+148:16  Warning: 'readSecureData' is defined but never used.  @typescript-eslint/no-unused-vars
+159:16  Warning: 'writeSecureData' is defined but never used.  @typescript-eslint/no-unused-vars
+280:33  Warning: '_index' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
